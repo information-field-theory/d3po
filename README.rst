@@ -3,7 +3,7 @@ D\ :sup:`3`\ PO - Denoising, Deconvolving, and Decomposing Photon Observations
 
 **currently under construction**
 
-**D\ :sup:`3`\ PO** project homepage: `<http://www.mpa-garching.mpg.de/ift/d3po/>`_
+**D**\ :sup:`**3**`\ **PO** project homepage: `<http://www.mpa-garching.mpg.de/ift/d3po/>`_
 
 
 
@@ -18,5 +18,5 @@ warranty*.
 
 ----
 
-**D\ :sup:`3`\ PO** project homepage: `<http://www.mpa-garching.mpg.de/ift/d3po/>`_
+**D**\ :sup:`**3**`\ **PO** project homepage: `<http://www.mpa-garching.mpg.de/ift/d3po/>`_
 

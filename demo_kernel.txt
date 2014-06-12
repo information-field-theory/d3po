@@ -1,0 +1,10 @@
+## convolution kernel (axes orthogonal slice, rotationally symmetric, normalised)
+0.0025
+0.0125
+0.1
+0.22
+0.33
+0.22
+0.1
+0.0125
+0.0025
