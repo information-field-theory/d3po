@@ -21,9 +21,9 @@ Description
 References
 ..........
 
-.. [2] Selig et. al., "Denoising, Deconvolving, and Decomposing
-Photon Observations", submitted to Astronomy & Astrophysics, 2013;
-`arXiv:1311.1888 <http://www.arxiv.org/abs/1311.1888>`_
+.. [1] Selig et. al., "Denoising, Deconvolving, and Decomposing
+    Photon Observations", submitted to Astronomy & Astrophysics, 2013;
+    `arXiv:1311.1888 <http://www.arxiv.org/abs/1311.1888>`_
 
 Release Notes
 -------------

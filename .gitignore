@@ -18,6 +18,7 @@ build
 !README.rst
 !LICENSE
 !__init__.py
+#!setup.py
 #!config
 #!d3po.py
 #!demo_config
