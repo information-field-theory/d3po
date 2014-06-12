@@ -13,16 +13,16 @@
 .spyderproject
 build
 
-
 *
-!README.rst
 !LICENSE
+!README.rst
+!HOWTO.rst
 !__init__.py
-#!setup.py
-#!config
-#!d3po.py
-#!demo_config
-#!demo.py
+!setup.py
+!config
+!d3po.py
+!demo_config
+!demo.py
 !demo_kernel.txt
 !demo_events.txt
 !demo_exposure.txt
