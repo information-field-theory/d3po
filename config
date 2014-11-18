@@ -1,0 +1,93 @@
+##=============================================================================
+## model parameters
+##=============================================================================
+
+alpha                = 1
+q                    = 1E-12
+sigma                = 10
+beta                 = 1.5
+eta                  = 1E-4
+
+##=============================================================================
+## primary settings
+##=============================================================================
+
+## flags
+MAP_s                = True
+MAP_t                = False
+MAP_u                = None
+NO_t                 = False
+NO_u                 = False
+notes                = True
+saves                = True
+
+## convergence tolerance
+map_tol              = 1E-3
+tau_tol              = 5E-2
+
+## postprocess uncertainty
+aftermath            = True
+
+## multiprocessing
+ncpu                 = 2
+nper                 = 1
+
+## random seed
+seed                 = 42
+
+##-----------------------------------------------------------------------------
+## secondary settings
+##-----------------------------------------------------------------------------
+
+## starting values
+s0                   = None
+p0                   = None
+t0                   = None
+u0                   = None
+D0                   = None
+F0                   = None
+
+## power prior
+apply_smoothness     = True
+force_smoothness     = False
+perception           = (1, 0) ## (delta, epsilon)
+
+## power indexing
+log                  = True
+nbin                 = None
+binbounds            = None
+
+##-----------------------------------------------------------------------------
+## numerical settings
+##-----------------------------------------------------------------------------
+
+nb                   = 8
+sb                   = False
+
+## optimization of m^(s)
+iniSD_s              = {"spam":None, "a":(0.2,0.5,1,2), "c":(1E-4,0.9), "note":notes}
+runSD_s              = ({"alpha":1, "tol":1E-2, "clevel":3, "limii":1000},
+                        {"alpha":1, "tol":1E-3, "clevel":5, "limii":10000})
+
+## optimization of m^(u)
+iniSD_u              = {"spam":None, "a":(0.2,0.5,1,2), "c":(1E-4,0.9), "note":notes}
+runSD_u              = ({"alpha":1, "tol":1E-2, "clevel":3, "limii":1000},
+                        {"alpha":1, "tol":1E-3, "clevel":5, "limii":10000})
+
+## probing
+iniCGprobing         = {"var":False, "save":False, "loop":bool(ncpu==1), "force":False, "spam":None, "reset":None, "note":False, "x0":None}
+runCGprobing         = {"tol":5E-2, "clevel":1}
+
+## probing of D^(s)
+precondition_D       = True
+iniCGprobing_D       = {"random":"gau"}
+runCGprobing_Dkk     = ({"nrun":4, "limii":100},
+                        {"nrun":16})
+runCGprobing_Dxx     = ({"nrun":4, "limii":100},
+                        {"nrun":64})
+
+## probing of D^(u)
+iniCGprobing_F       = {"random":"pm1"}
+runCGprobing_Fxx     = ({"nrun":4, "limii":100},
+                        {"nrun":64})
+
