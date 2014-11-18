@@ -3,8 +3,6 @@ D\ :sup:`3`\ PO
 
 **D3PO** project homepage: `<http://www.mpa-garching.mpg.de/ift/d3po/>`_
 
-**(currently under construction)**
-
 Summary
 -------
 
