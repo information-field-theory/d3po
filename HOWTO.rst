@@ -55,7 +55,8 @@ attributes:
     `NIFTY switch <http://www.mpa-garching.mpg.de/ift/nifty/setup_classes.html#the-switch-class-on-off>`_
     :py:attr:`R.mask_out_pixels` controls the use of an additional (binary)
     mask that excludes pixels hosting bright point sources. This attribute is
-    only used when raising an initial guess for the diffuse signal field.
+    only used (switched on or off by D3PO itself) when raising an initial guess
+    for the diffuse signal field.
 
   * The Boolean :py:attr:`R.identify_io_pixels` indicates whether there is an
     equivalence between data and signal space; i.e., you can uniquely
