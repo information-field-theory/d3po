@@ -285,10 +285,15 @@ This will create the following directory tree.
     ./test_1337/MY_CONFIG_FILE # a copy (in case the original is modified for test_1338)
     ./test_1337/d3po_tmp/      # subdirectory (for intermediate results)
 
-Since the problem is now set up, you can solve it for your data set.
-
 .. tip:: At this point, you can also check and modify the configuration
     by accessing the :py:attr:`problem.config` attribute.
+
+>>> problem.config.map_mode, problem.config.tau_mode # reconstruction modes
+(1, -1)
+>>> problem.config.p0 # initial power spectrum
+array([ 1.00000000e+00,  1.00000000e+00, ... ])
+
+Since the problem is now set up, you can solve it for your data set.
 
 >>> problem.solve(d)
 
