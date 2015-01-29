@@ -69,8 +69,9 @@ References
 
 .. [1] Selig et. al.,
     "Denoising, Deconvolving, and Decomposing Photon Observations", accepted by
-    Astronomy & Astrophysics, 2014;
-    `arXiv:1311.1888 <http://www.arxiv.org/abs/1311.1888>`_
+    Astronomy & Astrophysics,
+    `A&A, vol. 574, id. A74 <http://dx.doi.org/10.1051/0004-6361/201323006>`_,
+    2014; `arXiv:1311.1888 <http://www.arxiv.org/abs/1311.1888>`_
 
 Release Notes
 -------------

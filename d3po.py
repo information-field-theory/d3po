@@ -1670,9 +1670,9 @@ class problem(object):
             lmbd : bool
                 Whether to return the total reproduced photon counts or not.
             lmbd_s : bool
-                Whether to return the diffuse reproduced photon flux or not.
+                Whether to return the diffuse reproduced photon counts or not.
             lmbd_u : bool
-                Whether to return the point-like reproduced photon flux or not.
+                Whether to return the point-like reproduced photon counts or not.
             s_err : bool
                 Whether to return the relative error on the diffuse flux or not.
             u_err : bool
