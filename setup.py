@@ -21,11 +21,13 @@
 
 from distutils.core import setup
 
-setup(name="d3po",
-      version="1.0.0",
-      description="Deonoiseing, Deconvolving, and Decomposing Photon Observations",
+setup(name="ift_d3po",
+      version="1.0.1",
       author="Marco Selig",
       author_email="mselig@mpa-garching.mpg.de",
+      #maintainer="",
+      #maintainer_email="@mpa-garching.mpg.de",
+      description="Deonoiseing, Deconvolving, and Decomposing Photon Observations",
       url="http://www.mpa-garching.mpg.de/ift/d3po/",
       packages=["d3po"],
       package_dir={"d3po": ""},
@@ -34,5 +36,6 @@ setup(name="d3po",
                              "demo_kernel.txt",
                              "demo_events.txt",
                              "demo_exposure.txt",
-                             "demo_mask.txt"]})
+                             "demo_mask.txt"]},
+      license="GPLv3")
 
