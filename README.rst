@@ -30,30 +30,48 @@ Requirements
     *   `multiprocessing <http://docs.python.org/2/library/multiprocessing.html>`_
         (standard library)
 
-*   `NIFTY <https://github.com/mselig/nifty>`_ (v0.8.0) - Numerical Information
+*   `NIFTY <https://github.com/information-field-theory/nifty>`_ (v1.0.6) - Numerical Information
     Field Theory
 
 Download
 ........
 
-The latest release is tagged **v1.0.0** and is available as a source package
-at `<https://github.com/mselig/d3po/tags>`_. The current version can be
+The latest release is tagged **v1.0.1** and is available as a source package
+at `<https://github.com/information-field-theory/d3po/tags>`_. The current version can be
 obtained by cloning the repository::
 
-    git clone git://github.com/mselig/d3po.git
-    cd d3po
+    git clone git://github.com/information-field-theory/d3po.git
 
 Installation
 ............
 
-D3PO is installed using Distutils by running the following command::
+*   D3PO can be installed using `PyPI <https://pypi.python.org/pypi>`_ and
+    **pip** by running the following command::
 
-    python setup.py install
+        pip install ift_d3po
 
-Alternatively, a private or user specific installation can be done by::
+    Alternatively, a private or user specific installation can be done by::
 
-    python setup.py install --user
-    python setup.py install --install-lib=/SOMEWHERE
+        pip install --user ift_d3po
+
+*   D3PO can be installed using **Distutils** by running the following command::
+
+        cd d3po
+        python setup.py install
+
+    Alternatively, a private or user specific installation can be done by::
+
+        python setup.py install --user
+        python setup.py install --install-lib=/SOMEWHERE
+
+First Steps
+...........
+
+To get started, you can browse through the
+`how-to guide <http://www.mpa-garching.mpg.de/ift/d3po/HOWTO.html>`_
+or simply run the demonstration::
+
+        >>> run -m d3po.demo
 
 Acknowledgement
 ---------------

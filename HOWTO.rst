@@ -307,5 +307,5 @@ Do you want to know more?
 -------------------------
 
 As a continuation of this HOWTO guide, you can play around with the
-`D3PO Demo <http://www.mpa-garching.mpg.de/ift/d3po/demo.html>`_.
+`D3PO demonstration <http://www.mpa-garching.mpg.de/ift/d3po/demo.html>`_.
 

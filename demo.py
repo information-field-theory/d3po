@@ -245,11 +245,12 @@ def load_demo(demodirectory):
 if(__name__=="__main__"):
 
     ## set up demo
-    demodirectory = "./" ## modify to D3PO install directory
+    demodirectory = os.path.dirname(os.path.realpath(__file__))
     R,d = load_demo(demodirectory)
 
     ## set up problem
-    problem = d3po.problem(R,"demo_config","./d3po_demo/")
+    demo_config = os.path.join(demodirectory,"demo_config")
+    problem = d3po.problem(R,demo_config,"./d3po_demo/")
 
     ## solve problem
     problem.solve(d)
