@@ -53,7 +53,7 @@ from nifty import switch,notification,about,                                 \
 #about.multiprocessing.off()
 
 
-__version__ = "1.0.0"
+__version__ = "1.0.2"
 
 
 ##-----------------------------------------------------------------------------
@@ -1041,7 +1041,7 @@ class problem(object):
         if(self.config.map_mode==3):
             E,g = self._calc_Eg_Gu(self.s_eff(),u,self.F_)
         else:
-            E,g = self._calc_Eg_Hu(self.s_+0.5*self.D_,u)
+            E,g = self._calc_Eg_Hu(self.s_+0.5*self.D_,u) ## TODO: check justification of uncertainty correction
         ## restrict gradient
         if(self._restrict is not False):
             g *= self._restrict
