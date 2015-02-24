@@ -1,3 +1,24 @@
+## D3PO (Deonoiseing, Deconvolving, and Decomposing Photon Observations) has
+## been developed at the Max-Planck-Institute for Astrophysics.
+##
+## Copyright (C) 2014 Max-Planck-Society
+##
+## Author: Marco Selig
+## Project homepage: <http://www.mpa-garching.mpg.de/ift/d3po/>
+##
+## This program is free software: you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation, either version 3 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+## See the GNU General Public License for more details.
+##
+## You should have received a copy of the GNU General Public License
+## along with this program. If not, see <http://www.gnu.org/licenses/>.
+
 """
     ..                  __
     ..      ________   __/  ______    ______
@@ -11,7 +32,6 @@
 
 """
 from __future__ import division
-import __main__ as main_demo
 from scipy.signal import sepfir2d as sm2
 #from nifty import *
 import os
@@ -245,7 +265,7 @@ def load_demo(demodirectory):
 if(__name__=="__main__"):
 
     ## set up demo
-    demodirectory = os.path.dirname(os.path.realpath(__file__))
+    demodirectory = os.path.dirname(os.path.realpath(d3po.__file__))
     R,d = load_demo(demodirectory)
 
     ## set up problem
@@ -255,41 +275,39 @@ if(__name__=="__main__"):
     ## solve problem
     problem.solve(d)
 
-    ## check whether interactive
-    if(not hasattr(main_demo,"__file__")):
-        ## define nice
-        HE = ncmap.he()
-        HE.set_bad([0,0,0,1]) ## fix zero event pixels
-        nice = {"vmin":1,"vmax":144,"cmap":HE,"norm":"log"}
+    ## define nice
+    HE = ncmap.he()
+    HE.set_bad([0,0,0,1]) ## fix zero event pixels
+    nice = {"vmin":1,"vmax":144,"cmap":HE,"norm":"log"}
 
-        ## get results
-        s,u,rho_s,rho_u = problem.get(s=True,u=True,rho_s=True,rho_u=True)
+    ## get results
+    s,u,rho_s,rho_u = problem.get(s=True,u=True,rho_s=True,rho_u=True)
 
-        ## nicely plot results
-        field(R.domain,val=d.val).plot(title="(raw) photon observation",unit="counts",**nice)
-        rho_s.plot(title="diffuse photon flux",unit="counts/pixel",**nice)
-        field(R.domain,val=R.apply_PSF(rho_u.val)).plot(title="(reconvolved) point-like flux",unit="counts/pixel",**nice)
+    ## nicely plot results
+    field(R.domain,val=d.val).plot(title="(raw) photon observation",unit="counts",**nice)
+    rho_s.plot(title="diffuse photon flux",unit="counts/pixel",**nice)
+    field(R.domain,val=R.apply_PSF(rho_u.val)).plot(title="(reconvolved) point-like flux",unit="counts/pixel",**nice)
 
-        ## plot response properties
-        #e = field(R.domain)
-        #e[e.dim(split=True)[0]//2,e.dim(split=True)[1]//2] = 10
-        #field(R.domain,val=R.apply_PSF(e)).plot(title="convolution kernel",vmin=0,vmax=1,cmap=pl.cm.gray_r)
-        #field(R.domain,val=R.exposure).plot(title="exposure mask",vmin=0,vmax=1,cmap=pl.cm.gray)
-        #field(R.domain,val=R.mask).plot(title="binary mask",vmin=0,vmax=1,cmap=pl.cm.gray)
+    ## plot response properties
+    #e = field(R.domain)
+    #e[e.dim(split=True)[0]//2,e.dim(split=True)[1]//2] = 10
+    #field(R.domain,val=R.apply_PSF(e)).plot(title="convolution kernel",vmin=0,vmax=1,cmap=pl.cm.gray_r)
+    #field(R.domain,val=R.exposure).plot(title="exposure mask",vmin=0,vmax=1,cmap=pl.cm.gray)
+    #field(R.domain,val=R.mask).plot(title="binary mask",vmin=0,vmax=1,cmap=pl.cm.gray)
 
-        ## plot D123PO
-        #l = problem.get(lmbda=True)
-        #field(R.domain,val=l.val).plot(title="(reproduced) noiseless observation",unit="counts",**nice)
-        #field(R.domain,val=R.apply_PSF(rho_s.val+rho_u.val)).plot(title="(reconvolved) total photon flux",unit="counts/pixel",**nice)
-        #(rho_s+rho_u).plot(title="total photon flux",unit="counts/pixel",**nice)
+    ## plot D123PO
+    #l = problem.get(lmbda=True)
+    #field(R.domain,val=l.val).plot(title="(reproduced) noiseless observation",unit="counts",**nice)
+    #field(R.domain,val=R.apply_PSF(rho_s.val+rho_u.val)).plot(title="(reconvolved) total photon flux",unit="counts/pixel",**nice)
+    #(rho_s+rho_u).plot(title="total photon flux",unit="counts/pixel",**nice)
 
-        ## plot signal fields
-        #s.plot(title="diffuse signal field",vmin=9.5,vmax=13.7,unit="dimensionless")
-        #s.plot(title="diffuse power spectrum",vmin=2E-13,vmax=1,power=True,mono=False,other=problem.S.get_power())
-        #u.plot(title="point-like signal field",vmin=13.2,vmax=17.4,unit="dimensionless")
+    ## plot signal fields
+    #s.plot(title="diffuse signal field",vmin=9.5,vmax=13.7,unit="dimensionless")
+    #s.plot(title="diffuse power spectrum",vmin=2E-13,vmax=1,power=True,mono=False,other=problem.S.get_power())
+    #u.plot(title="point-like signal field",vmin=13.2,vmax=17.4,unit="dimensionless")
 
-        ## flux uncertainties
-        #delta_rho_s,delta_rho_u = problem.get(s_err=True,u_err=True)
+    ## flux uncertainties
+    #delta_rho_s,delta_rho_u = problem.get(s_err=True,u_err=True)
 
 ##=============================================================================
 

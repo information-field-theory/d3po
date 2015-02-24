@@ -22,7 +22,7 @@
 from distutils.core import setup
 
 setup(name="ift_d3po",
-      version="1.0.1",
+      version="1.0.2",
       author="Marco Selig",
       author_email="mselig@mpa-garching.mpg.de",
       #maintainer="",
